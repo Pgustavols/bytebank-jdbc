@@ -16,7 +16,7 @@ O ByteBank é uma aplicação back-end que simula operações bancárias básica
 - **JDBC** — Conexão e manipulação do banco de dados
 - **HikariCP** — Pool de conexões de alta performance
 - **Maven** — Gerenciamento de dependências e build
-- **PostgreSQL / MySQL** — Banco de dados relacional *(verifique o `pom.xml` para o driver utilizado)*
+- **MySQL** — Banco de dados relacional
 
 ---
 
