@@ -1,3 +1,0 @@
-db.url=jdbc:sqlserver://localhost;databaseName=bytebank;encrypt=false
-db.user=sa
-db.password=Bytebank123
