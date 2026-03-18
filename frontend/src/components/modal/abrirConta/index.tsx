@@ -14,7 +14,7 @@ export function ModalAbrirConta({ onClose, onSucesso }: ModalAbrirContaProps) {
   const [cpf, setCpf] = useState('')
   const [email, setEmail] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+
 
   async function handleConfirmar() {
     if (!numero || !nome || !cpf || !email) {

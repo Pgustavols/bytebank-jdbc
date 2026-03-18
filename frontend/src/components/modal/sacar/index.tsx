@@ -12,7 +12,7 @@ interface ModalSacarProps {
 export function ModalSacar({ numeroConta, onClose, onSucesso }: ModalSacarProps) {
   const [valor, setValor] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+
 
   async function handleConfirmar() {
     if (!valor) return

@@ -13,7 +13,7 @@ export function ModalTransferir({ numeroConta, onClose, onSucesso }: ModalTransf
   const [beneficiado, setBeneficiado] = useState('')
   const [valor, setValor] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+
 
   async function handleConfirmar() {
     if (!valor || !beneficiado) return

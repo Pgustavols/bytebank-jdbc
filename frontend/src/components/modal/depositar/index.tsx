@@ -13,7 +13,7 @@ interface ModalDepositarProps {
 export function ModalDepositar({ numeroConta, onClose, onSucesso }: ModalDepositarProps) {
   const [valor, setValor] = useState('')
   const [loading, setLoading] = useState(false)
-  const [error, setError] = useState<string | null>(null)
+
 
   async function handleConfirmar() {
     if (!valor) return
