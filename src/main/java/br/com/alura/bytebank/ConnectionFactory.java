@@ -19,17 +19,17 @@ public class ConnectionFactory {
     }
 
     private HikariDataSource createDataSource() {
-        String url = System.getenv("DATABASE_URL");
-        String user = System.getenv("DATABASE_USER");
-        String password = System.getenv("DATABASE_PASSWORD");
+        String host = System.getenv("PGHOST");
+        String port = System.getenv("PGPORT");
+        String database = System.getenv("PGDATABASE");
+        String user = System.getenv("PGUSER");
+        String password = System.getenv("PGPASSWORD");
 
-        // Corrige a URL se não tiver o prefixo jdbc:
-        if (url != null && !url.startsWith("jdbc:")) {
-            url = "jdbc:" + url;
-        }
+        String url;
 
-        // Se não tiver variáveis de ambiente, usa o config.properties local
-        if (url == null || url.isEmpty()) {
+        if (host != null && !host.isEmpty()) {
+            url = "jdbc:postgresql://" + host + ":" + port + "/" + database;
+        } else {
             try {
                 Properties props = loadProperties();
                 url = props.getProperty("db.url");
@@ -47,6 +47,9 @@ public class ConnectionFactory {
         config.setMaximumPoolSize(10);
         return new HikariDataSource(config);
     }
+
+
+
 
     private Properties loadProperties() throws IOException {
         try (FileInputStream fs = new FileInputStream("config.properties")) {
