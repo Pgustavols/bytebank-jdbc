@@ -1,6 +1,6 @@
 import { ContaProps, DadosAberturaConta } from '../types'
 
-const BASE_URL = '/contas'
+const BASE_URL = 'https://bytebank-jdbc-production.up.railway.app/contas'
 
 export async function listarContas(): Promise<ContaProps[]> {
   const res = await fetch(BASE_URL)
